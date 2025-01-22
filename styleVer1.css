@@ -1,0 +1,104 @@
+/* -------------------------------
+   GENERAL RESET / BASE STYLES
+--------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #0a192f; /* dark navy background */
+  color: #ccd6f6;            /* light text */
+}
+
+/* -------------------------------
+   WRAPPER LAYOUT
+--------------------------------- */
+.wrapper {
+  display: flex; /* Sidebar and main content horizontally side-by-side */
+  height: 100vh; /* Full viewport height */
+}
+
+/* -------------------------------
+   SIDEBAR
+--------------------------------- */
+.sidebar {
+  width: 250px; 
+  background-color: #112240; 
+  padding: 2rem 1rem;
+  position: fixed;    /* remains in place while you scroll the rest */
+  top: 0;
+  left: 0;
+  bottom: 0;          /* stretch from top to bottom */
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.sidebar nav a {
+  display: block;  
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #8892b0;  /* lighter text color */
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.sidebar nav a:hover {
+  color: #fff;
+}
+
+/* -------------------------------
+   MAIN CONTENT
+--------------------------------- */
+.main-content {
+  /* This margin offsets the fixed sidebar’s width, preventing overlap */
+  margin-left: 250px; 
+  padding: 2rem;
+  overflow-y: auto; /* content in main area can scroll if it’s tall */
+  height: 100vh;    /* ensure it spans the full viewport height */
+}
+
+/* Example headings and paragraphs styles */
+h1, h2 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #8892b0;
+}
+
+/* Footer or small text example */
+.footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #8892b0;
+}
+
+/* This class is just to visually mimic links that might open in new tabs */
+.external-link::after {
+  content: " ↗";
+  font-size: 0.8rem;
+  vertical-align: super;
+}
+
+/* -------------------------------
+   MEDIA QUERIES (OPTIONAL)
+--------------------------------- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
+  }
+}
