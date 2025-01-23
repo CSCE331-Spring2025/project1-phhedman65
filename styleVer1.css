@@ -23,51 +23,146 @@ html, body {
 }
 
 /* -------------------------------
-   SIDEBAR
+   NAV LINK STYLES
 --------------------------------- */
 .sidebar {
-  width: 250px; 
-  background-color: #112240; 
+  width: 750px; 
+  background-color: #112240;
   padding: 2rem 1rem;
-  position: fixed;    /* remains in place while you scroll the rest */
-  top: 0;
-  left: 0;
-  bottom: 0;          /* stretch from top to bottom */
+  /* Optional: if you want the sidebar fixed and page scroll on the right side only:
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     left: 0; 
+   */
 }
 
+/* Sidebar Heading (e.g., name) */
 .sidebar h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  display: inline-block;
+  
+  white-space: nowrap;
+  font-size: 3rem;
   color: #fff;
+  margin-bottom: 1rem;
 }
 
+/* ---------------------------------------------------------
+   4. SIDEBAR NAV LINKS
+--------------------------------------------------------- */
 .sidebar nav a {
-  display: block;  
-  margin-bottom: 1rem;
+  /* 
+    We want each link to appear on its own line (vertical stacking)
+    but also align the indicator line + text horizontally on one row.
+    So we use flex on each link, but make the link itself block-level 
+    so they stack vertically. 
+  */
+  display: flex;
+  align-items: center;
+
+  /* Occupy full width in the sidebar for easy clicking */
+  width: 100%;
+
+  /* Spacing around the link text */
+  padding: 0.5rem 0; /* vertical space */
+  
   text-decoration: none;
-  color: #8892b0;  /* lighter text color */
+  color: #8892b0;         /* default link color */
   font-weight: 500;
   transition: color 0.2s ease-in-out;
+  
+  /* space between links */
+  margin-bottom: 0.75rem; 
 }
 
+/* Hover: text goes white */
 .sidebar nav a:hover {
   color: #fff;
 }
+
+/* Active link: text is white by default, unless we hover on a different link */
+.sidebar nav a.active {
+  color: #fff;
+}
+
+/* ---------------------------------------------------------
+   5. INDICATOR LINE
+   Using ::before to create a horizontal line to the left of the text
+--------------------------------------------------------- */
+.sidebar nav a::before {
+  content: "";
+  /* inline-block ensures we can control width/height, 
+     and they appear in the same line with text in a flex container */
+  display: inline-block;
+
+  width: 20px;        /* default small line length */
+  height: 2px;        /* fixed thickness */
+  
+  background-color: #8892b0;
+  margin-right: 0.5rem; /* spacing between line and text */
+  
+  transition: 
+    width 0.3s ease-in-out, 
+    background-color 0.3s ease-in-out;
+}
+
+/* Hover on non-active links: extend the line */
+.sidebar nav a:hover::before {
+  width: 40px;
+  background-color: #fff;
+}
+
+/* Active link baseline: bigger line (and white) */
+.sidebar nav a.active::before {
+  width: 60px;
+  background-color: #fff;
+}
+
+/* ---------------------------------------------------------
+   6. HOVER LOGIC
+   - If user hovers anywhere in nav, the active link dims 
+     unless hovering that link
+--------------------------------------------------------- */
+
+/* When hovering ANY link in the nav, shrink/dim the active link 
+   unless we’re actually hovering that link. */
+.sidebar nav:hover a.active {
+  color: #8892b0;         /* revert to default color */
+}
+.sidebar nav:hover a.active::before {
+  width: 20px;
+  background-color: #8892b0;
+}
+
+/* BUT if we hover the active link itself, keep it big & white */
+.sidebar nav a.active:hover {
+  color: #fff;
+}
+.sidebar nav a.active:hover::before {
+  width: 60px;
+  background-color: #fff;
+}
+
 
 /* -------------------------------
    MAIN CONTENT
 --------------------------------- */
 .main-content {
   /* This margin offsets the fixed sidebar’s width, preventing overlap */
-  margin-left: 250px; 
+  margin-left: 0px; 
   padding: 2rem;
   overflow-y: auto; /* content in main area can scroll if it’s tall */
   height: 100vh;    /* ensure it spans the full viewport height */
 }
 
+.main-content img {
+  width: 500px;
+}
+
 /* Example headings and paragraphs styles */
 h1, h2 {
   font-weight: bold;
+  font-size: 100px;
   margin-bottom: 1rem;
 }
 
@@ -91,14 +186,3 @@ p {
   vertical-align: super;
 }
 
-/* -------------------------------
-   MEDIA QUERIES (OPTIONAL)
---------------------------------- */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 200px;
-  }
-  .main-content {
-    margin-left: 200px;
-  }
-}
