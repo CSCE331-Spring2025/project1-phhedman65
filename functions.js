@@ -47,7 +47,11 @@ window.onload = function(){
     // 2 (b) get html style element by ID
     var styleSheet = document.getElementById("mainStyleSheet");
 
-    
+    if (!savedStylesheet) {
+        savedStylesheet = "styleVer1.css"; 
+        localStorage.setItem("savedStyleSheet", savedStylesheet); 
+    }
+
     // 2 (c) replace href attribute of html element.
     styleSheet.setAttribute("href", savedStylesheet );
 }
