@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <title>Qualifications</title>
-    <link rel="stylesheet" href="styleVer1.css" />
+    <link id="mainStyleSheet" rel="stylesheet"/>
+    <!-- script fixes bug where iframe resume embed lags page generation -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem("savedStyleSheet") || "styleVer1.css";
+        document.getElementById("mainStyleSheet").setAttribute("href", saved);
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,6 +20,7 @@
     <link rel="icon" href="icon.ico" type="image/x-icon" />
   </head>
   <body>
+    <script src="functions.js"></script>
     <div class="wrapper">
       <!-- SIDEBAR -->
       <aside class="sidebar">
@@ -25,7 +33,7 @@
           <a href="genai.html">GenAI</a>
           
         </nav>
-
+        <button onclick="toggleStyleSheet()" type="button">Toggle Style</button>
         <div class="sidebar-icons">
           <a href="mailto:phhedman65@tamu.edu" class="icon-button">
             <img src="email_icon.png" alt="Email Icon" />
@@ -47,53 +55,65 @@
               >Resume</a
             >
           </div>
-          <div class="div-flex">
-            <iframe
-              class="resume"
-              src="https://docs.google.com/document/d/1M92vQiyaFmtgQ7AxRVoEPfFU3dA0nEDTIr5KXvWXmUo/preview"
-            >
-            </iframe>
-          </div>
-
-          <div class="div-flex">
-            <div class="sidediv">
-              <p class="subhead">Skills</p>
-              <ul>
-                <li>
-                  Experienced in programming languages including C#, C++,
-                  Python, Verilog, and Rust.
-                </li>
-                <li>
-                  Developed in Unity and Godot game engines with C# and GDScript
-                </li>
-                <li>
-                  Created applications with C# .NET framework including WPF,
-                  UWP, Avalonia, Windows Forms fullstack
-                </li>
-                <li>
-                  Worked with Wireshark, Ghidra, Hashcat and other
-                  security/diagnostics tools
-                </li>
-                <li>Familiar with Ubuntu and Arch Linux distros</li>
-              </ul>
+          <div class="qual-side-adjust-flex">
+            
+            <div class="div-flex">
+              <iframe 
+                class="resume"
+                src="https://docs.google.com/document/d/1M92vQiyaFmtgQ7AxRVoEPfFU3dA0nEDTIr5KXvWXmUo/preview"
+              > 
+              </iframe>
             </div>
-            <div class="sidediv">
-              <p class="subhead">Specializations</p>
-              <p>
-                I am interested in software development under the .NET framework
-                to create compiled, marketable programs. Looking to further
-                pursue RF systems and IoT wearables including RFID and NFC. Game
-                development and .NET includes extensive C# experience, while
-                beginning to learn Rust. Currently augmenting university studies
-                with CompTIA Security+ cert. Hardware level security studies
-                incoming.
-              </p>
+  
+            <div class="div-flex">
+              <div class="sidediv-outer">
+                <p class="subhead">Skills</p>
+                <div class="sidediv">
+                
+                  <ul>
+                    <li>
+                      Experienced in programming languages including C#, C++,
+                      Python, Verilog, and Rust.
+                    </li>
+                    <li>
+                      Developed in Unity and Godot game engines with C# and GDScript
+                    </li>
+                    <li>
+                      Created applications with C# .NET framework including WPF,
+                      UWP, Avalonia, Windows Forms fullstack
+                    </li>
+                    <li>
+                      Worked with Wireshark, Ghidra, Hashcat and other
+                      security/diagnostics tools
+                    </li>
+                    <li>Familiar with Ubuntu and Arch Linux distros</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="sidediv-outer">
+                <p class="subhead">Specializations</p>
+                <div class="sidediv">
+                  
+                  <p>
+                    I am interested in software development under the .NET framework
+                    to create compiled, marketable programs. Looking to further
+                    pursue RF systems and IoT wearables including RFID and NFC. Game
+                    development and .NET includes extensive C# experience, while
+                    beginning to learn Rust. Currently augmenting university studies
+                    with CompTIA Security+ cert. Hardware level security studies
+                    incoming.
+                  </p>
+                </div>
+              </div>
+              
             </div>
           </div>
+          
         </div>
       </section>
     </div>
 
-    <script src="script.js"></script>
+    
   </body>
 </html>

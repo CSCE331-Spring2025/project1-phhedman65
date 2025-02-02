@@ -62,7 +62,6 @@ html, body {
 
 
 
-
 /* NAV side links*/
 .sidebar nav a {
   
@@ -131,7 +130,7 @@ html, body {
 /* hover logic If user hovers anywhere in nav, the active link goes less
      unless hovering that link*/
 
-/* When hovering ANY link in the nav, shrink/dim the active link 
+/* when hovering ANY link in the nav, shrink/dim the active link 
    unless were actually hovering link */
 .sidebar nav:hover a.active {
   color: #8892b0;        
@@ -150,15 +149,43 @@ html, body {
   background-color: #fff;
 }
 
+
+.sidebar button {
+  margin-top: auto; 
+  background-color: transparent;
+  border:2px solid #0a192f;
+  box-sizing: border-box;
+  color:#8892b0;  
+  overflow: hidden;
+  padding: 1.1rem 4rem;
+  font-family: 'bebas neue', sans-serif;
+  font-size: 2rem;
+
+  transition: 
+    color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+ 
+}
+
+.sidebar button:hover {
+  
+  color: #fff;
+  border:2px solid #fff;
+  
+}
+
+
 /* wrapper for the icon links */
 .sidebar-icons {
-  margin-top: auto; 
+  margin: 5px;
   display: flex;
   gap: 1rem; 
   border:2px solid #0a192f;
   border-radius: 2px;
   padding: 0.5rem;
 }
+
+
 
 
 .icon-button {
@@ -214,10 +241,12 @@ html, body {
   width: 40%;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  
 }
 
 .main-content img.wide-image {
   width: 100%;
+  
 }
 
 .main-content img.service-img {
@@ -238,6 +267,13 @@ h1, h2 {
   font-weight: bold;
   font-size: 2rem;
 }
+
+.subhead-service{
+  color: #fff;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
 .subhead::before {
   /*diamond part*/
   content: "";
@@ -258,7 +294,13 @@ h1, h2 {
   vertical-align: middle;       
 }
 
-
+.div-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 .div-flex {
   display: flex;
   justify-content: center;
@@ -266,6 +308,7 @@ h1, h2 {
 }
 
 .div-flex-service {
+  flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,6 +338,10 @@ li {
 }
 
 .sidediv {
+  
+}
+
+.sidediv-outer {
   width: 50%;
 }
 
@@ -308,6 +355,8 @@ li {
   width: 150px;
   height: 150px;
 }
+
+
 
 
 

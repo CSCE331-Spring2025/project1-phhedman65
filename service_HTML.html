@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Service</title>
-    <!-- <link rel="stylesheet" href="styleVer1.css" /> -->
+    <!-- <link  id="mainStyleSheet" rel="stylesheet" href="styleVer1.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,14 +18,14 @@
       <aside class="sidebar">
         <h1>Paul Hedman</h1>
         <nav>
-          <a href="index_HTML.html">About</a>
+          <a  href="index_HTML.html">About</a>
           <a href="portfolio_HTML.html">Projects</a>
           <a href="qualifications_HTML.html">Qualifications</a>
           <a href="service_HTML.html" class="active">Service</a>
           <a href="genai.html">GenAI</a>
           
         </nav>
-
+        <button onclick="toggleStyleSheet()" type="button">Toggle Style</button>
         <div class="sidebar-icons">
           <a href="mailto:phhedman65@tamu.edu" class="icon-button">
             <img src="email_icon.png" alt="Email Icon" />
@@ -39,76 +39,90 @@
       <!-- MAIN CONTENT -->
       <section class="main-content">
         <div class="main-center">
+          <div>
           <h1>Service</h1>
 
-          <p>Make the world you want to live in.</p>
-
-          <p class="subhead">Aggieland Humane Society</p>
-          <div class="div-flex-service">
-            <img src="humane.PNG" class="service-img" />
-            <p>
-              <a href="https://aggielandhumane.org/volunteer/"
-                >Aggieland Humane Society
-              </a>
-              is dedicated to helping cats and dogs permanent homes. Volunteers
-              have the opportunity to spend the day taking care of these pets by
-              feeding them, engaging in playtime, or going on walks. The
-              experience is great because you get to give them affection until
-              until they find other loving owners. I deeply value this
-              organization because it allows you to form a bond with the
-              animals, treating them as if they're your own, while contributing
-              to their happiness and well-being. The sign up allows you to work
-              with either cats or dogs, so they are open to both dog and cat
-              lovers alike. The best part of the day is going in and finding out
-              that another pet has been adopted.
-            </p>
+          <p class="subhead-service">Make the world you want to live in.</p>
           </div>
+          
 
-          <p class="subhead">Feed My Starving Children</p>
-          <div class="div-flex-service">
-            <img src="feed.PNG" class="service-img" />
-            <p>
-              <a href="https://www.fmsc.org/get-involved/volunteer/"
-                >Feed My Starving Children
-              </a>
-              allows children around the world access to vital meals through
-              donations and volunteer work. There are centers across the United
-              States where volunteers crank music and diligently package boxes
-              upon boxes of food. For those interested, it is an excellent
-              experience especially with groups (as many hands makes the work go
-              quick and keeps energy high). It is a highly fulfilling, fast
-              paced way to spend a weekend with friends and family while making
-              a difference. Time flew by incredibly quickly; the work was not
-              monotonous, but rather a fun group experience battling global
-              hunger.
-            </p>
+          
+          <div class="div-service-wrapper">
+            <div class="servicegroup">
+              <p class="subhead">Aggieland Humane Society</p>
+            <div class="div-flex-service">
+              <img src="humane.PNG" class="service-img" />
+              <p>
+                <a href="https://aggielandhumane.org/volunteer/"
+                  >Aggieland Humane Society
+                </a>
+                is dedicated to helping cats and dogs permanent homes. Volunteers
+                have the opportunity to spend the day taking care of these pets by
+                feeding them, engaging in playtime, or going on walks. The
+                experience is great because you get to give them affection until
+                until they find other loving owners. I deeply value this
+                organization because it allows you to form a bond with the
+                animals, treating them as if they're your own, while contributing
+                to their happiness and well-being. The sign up allows you to work
+                with either cats or dogs, so they are open to both dog and cat
+                lovers alike. The best part of the day is going in and finding out
+                that another pet has been adopted.
+              </p>
+            </div>
+            </div>
+            
+            <div class="servicegroup">
+              <p class="subhead">Feed My Starving Children</p>
+            <div class="div-flex-service">
+              <img src="feed.PNG" class="service-img" />
+              <p>
+                <a href="https://www.fmsc.org/get-involved/volunteer/"
+                  >Feed My Starving Children
+                </a>
+                allows children around the world access to vital meals through
+                donations and volunteer work. There are centers across the United
+                States where volunteers crank music and diligently package boxes
+                upon boxes of food. For those interested, it is an excellent
+                experience especially with groups (as many hands makes the work go
+                quick and keeps energy high). It is a highly fulfilling, fast
+                paced way to spend a weekend with friends and family while making
+                a difference. Time flew by incredibly quickly; the work was not
+                monotonous, but rather a fun group experience battling global
+                hunger.
+              </p>
+            </div>
+            </div>
+            
+            <div class="servicegroup">
+              <p class="subhead">Mission Arlington</p>
+            <div class="div-flex-service">
+              <img src="arlington.PNG" class="service-img" />
+              <p>
+                <a
+                  href="https://www.northtexasgivingday.org/organization/mission-arlington-mission-metroplex"
+                  >Mission Arlington
+                </a>
+                Mission Arlington is a non-profit organization by my home town.
+                Volunteers play a crucial role bringing food, toys, clothing, and
+                other needed items to be sorted and distributed to the community.
+                After sorting, items are given to families in need. One of my
+                favorite aspects of volunteering at Mission Arlington was handling
+                books and toys to be given to the younger kids. Additionally,
+                greeting donors who bring items in their cars was a excellent way
+                to meet people in the community. As a more local organization, it
+                felt more intimate and personal learning peoples' names. If you're
+                in the area, I highly recommend taking the time to donate your
+                time or extra possessions.
+              </p>
+            </div>
+            </div>
+            
           </div>
-
-          <p class="subhead">Mission Arlington</p>
-          <div class="div-flex-service">
-            <img src="arlington.PNG" class="service-img" />
-            <p>
-              <a
-                href="https://www.northtexasgivingday.org/organization/mission-arlington-mission-metroplex"
-                >Mission Arlington
-              </a>
-              Mission Arlington is a non-profit organization by my home town.
-              Volunteers play a crucial role bringing food, toys, clothing, and
-              other needed items to be sorted and distributed to the community.
-              After sorting, items are given to families in need. One of my
-              favorite aspects of volunteering at Mission Arlington was handling
-              books and toys to be given to the younger kids. Additionally,
-              greeting donors who bring items in their cars was a excellent way
-              to meet people in the community. As a more local organization, it
-              felt more intimate and personal learning peoples' names. If you're
-              in the area, I highly recommend taking the time to donate your
-              time or extra possessions.
-            </p>
-          </div>
+          
         </div>
       </section>
     </div>
 
-    <script src="script.js"></script>
+    <script src="functions.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Portfolio</title>
-    <!-- <link rel="stylesheet" href="styleVer1.css" /> -->
+    <!-- <link id="mainStyleSheet" rel="stylesheet" href="styleVer1.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +24,7 @@
           <a href="service_HTML.html">Service</a>
           <a href="genai.html">GenAI</a>
         </nav>
-
+        <button onclick="toggleStyleSheet()" type="button">Toggle Style</button>
         <div class="sidebar-icons">
           <a href="mailto:phhedman65@tamu.edu" class="icon-button">
             <img src="email_icon.png" alt="Email Icon" />
@@ -38,56 +38,65 @@
       <!--MAIN CONTENT -->
       <section class="main-content">
         <div class="main-center">
+          <div class="test-div">
           <h1>Projects</h1>
           <p class="subhead">ADS-B Receiver Handling</p>
-          <p >
-            I designed custom software to interpret incoming <a href="https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast">ADS-B</a> signals from
-            airplanes and send them to a web server with a Raspberry Pi, SDR
-            dongle, and 1090 MHz antenna. I produced a far cheaper ADS-B
-            receiver setup to be built and installed in bulk for airports.
-            Finally, I wrote an installation guide and further documentation for
-            users.
-          </p>
-          <div class="div-flex">
-            <img src="adsb_dump.PNG" alt="pic unavailable" class="wide-image" />
+          <div class="project-div">
+            <p class="bigger-text-p">
+              I designed custom software to interpret incoming <a href="https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast">ADS-B</a> signals from
+              airplanes and send them to a web server with a Raspberry Pi, SDR
+              dongle, and 1090 MHz antenna. I produced a far cheaper ADS-B
+              receiver setup to be built and installed in bulk for airports.
+              Finally, I wrote an installation guide and further documentation for
+              users.
+            </p>
+            <div class="div-flex">
+              <img src="adsb_dump.PNG" alt="pic unavailable" class="wide-image" />
+            </div>
           </div>
+          
           
 
           <p class="subhead">Game Development</p>
-          <p>
-            Game development in Unity (C#) and Godot (C#, GDScript) has been an
-            ongoing passion project that allows me to blend my artistic
-            creativity with a love of math and programming. I have developed
-            several small scale proof of concepts games.
-          </p>
-          <div class="div-flex">
-            <img src="game_topdown.PNG" alt="pic unavailable" />
-          
-            <img src="heroatk_framed.gif" alt="pic unavailable" />
+
+          <div class="project-div">
+            <p class="bigger-text-p">
+              Game development in Unity (C#) and Godot (C#, GDScript) has been an
+              ongoing passion project that allows me to blend my artistic
+              creativity with a love of math and programming. I have developed
+              several small scale proof of concepts games.
+            </p>
+            <div class="div-flex">
+              <img src="game_topdown.PNG" alt="pic unavailable" />
+            
+              <img src="heroatk_framed.gif" alt="pic unavailable" />
+            </div>
           </div>
           
           
+          
           <p class="subhead">Verilog Single Cycle Processor</p>
-          <p>
+          <p class="bigger-text-p">
             Implemented components of a MIPS processor in Verilog and formed
             them together to simulate a CPU running ARMv8 instructions. Included
             process controler, ALU, sign extension, memory, and register files.
           </p>
 
           <p class="subhead">Cybersecurity Development</p>
-          <p>
+          <p class="bigger-text-p">
             I created a functioning keylogger script that uploads logs routinely
             to a select email through python and <a href="https://docs.python.org/3/library/smtplib.html">smtplib</a>.
           </p>
 
           <p class="subhead">Windows Forms Engineering Helper Tools</p>
-          <p>
+          <p class="bigger-text-p">
             Developed a Windows Forms application to quickly compute common problems in airport baggage Revit design. 
           </p>
+        </div>
         </div>
       </section>
     </div>
 
-    <script src="script.js"></script>
+    <script src="functions.js"></script>
   </body>
 </html>
